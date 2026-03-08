@@ -45,12 +45,14 @@ VALIDATE "$?" "MONGODB ENABLEING"
 systemctl start mongod &>>$LOG_FILE
 VALIDATE "$?" "STARTING MONGODB"
 
-sed -i 's/127.0.0.1/0.0.0.0/-g'  /etc/mongod.conf # here we use this as vim editor here what we are doing is changing port numbers in /etc/mongod.cong file.
+sed -i 's/127.0.0.1/0.0.0.0/g'  /etc/mongod.conf # here we use this as vim editor here what we are doing is changing port numbers in /etc/mongod.cong file.
 
 VALIDATE "$?" "CHANGED PORT NUMBERS IN MONGODB CONF FILE"
 
 systemctl restart mongod &>>$LOG_FILE
 VALIDATE "$?" "MONGODB RESTARTED SUCESSFULLY"
+
+
 
 
 
