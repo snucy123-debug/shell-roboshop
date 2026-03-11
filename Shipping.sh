@@ -28,7 +28,7 @@ echo "Please enter root password to setup"
 read -s MYSQL_ROOT_PASSWORD
 
 # validate functions takes input as exit status, what command they tried to install
-VALIDATE(){user
+VALIDATE(){ user
     if [ $1 -eq 0 ]
     then
         echo -e "$2 is ... $G SUCCESS $N" | tee -a $LOG_FILE
