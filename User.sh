@@ -78,4 +78,4 @@ VALIDATE $? "Starting user"
 END_TIME=$(date +%s)
 TOTAL_TIME=$(( $END_TIME - $START_TIME )) # here what we did we just substarct the start time and time so we get exact time taken while execution
 
-echo -e "Script exection completed successfully, $Y time taken: $TOTAL_TIME seconds $N" | tee -a $LOG_FILE
+echo -e "Script exection completed successfully, $G time taken: $TOTAL_TIME seconds $N" | tee -a $LOG_FILE
