@@ -6,8 +6,8 @@ INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipp
 ZONE_ID="Z01604136BDJ5YNPI3XX" # replace with your ZONE ID
 DOMAIN_NAME="vkdevin.online" # replace with your domain
 
-#for instance in ${INSTANCES[@]} # If we run this it will install all instance 
-for instance in $@
+for instance in ${INSTANCES[@]} # If we run this it will install all instance 
+#for instance in $@
 #ABOVE COMMAND  instance in $@  ►so here it help ful for install instance what ever u need like we need to give inastance name in linux server.
 do
     INSTANCE_ID=$(aws ec2 run-instances --image-id ami-0220d79f3f480ecf5 --instance-type t3.micro --security-group-ids sg-0cb7bc58080de4d99 --tag-specifications "ResourceType=instance,Tags=[{Key=Name, Value=$instance}]" --query "Instances[0].InstanceId" --output text)
